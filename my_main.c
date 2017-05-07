@@ -83,8 +83,21 @@ void my_main() {
       matrix_mult(peek(s), tmp);
       copy_matrix(tmp, peek(s));
       break;
-	    
-      
+    case ROTATE:
+      switch( (int) op[i].op.rotate.axis) {
+	double theta = (M_PI / 180);
+      case 0:
+	tmp = make_rotX(op[i].op.rotate.degrees * theta );
+	break;
+      case 1:
+	tmp = make_rotY(op[i].op.rotate.degrees * theta );
+	break;
+      case 2:
+	tmp = make_rotX(op[i].op.rotate.degrees * theta );
+	break;
+      }
+      matrix_mult(peek(s), tmp);
+      copy_matrix(tmp, peek(s));
     }
   }
 }
