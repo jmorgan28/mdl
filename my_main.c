@@ -106,6 +106,12 @@ void my_main() {
       draw_polygons(edges, t, g);
       edges->lastcol = 0;
       break;
+    case SPHERE:
+      add_sphere( edges, op[i].op.sphere.d[0], op[i].op.sphere.d[1], op[i].op.sphere.d[2],op[i].op.sphere.r, .1);
+      matrix_mult(peek(s), edges);
+      draw_polygons(edges, t, g);
+      edges->lastcol = 0;
+      break;
     }
   }
 }
