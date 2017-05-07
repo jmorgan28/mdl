@@ -53,6 +53,7 @@ void my_main() {
 
   int i;
   struct matrix *tmp;
+  struct matrix *edges;
   struct stack *s;
   screen t;
   color g;
@@ -62,7 +63,7 @@ void my_main() {
   g.blue = 0;
   
   s = new_stack();
-  tmp = new_matrix(4, 1000);
+  edges = new_matrix(4, 1000);
   clear_screen( t );
 
   for (i=0;i<lastop;i++) {  
@@ -98,6 +99,13 @@ void my_main() {
       }
       matrix_mult(peek(s), tmp);
       copy_matrix(tmp, peek(s));
+      break;
+    case BOX:
+      add_box(edges, op[i].op.box.d0[0],op[i].op.box.d0[1],op[i].op.box.d0[2], op[i].op.box.d1[0],op[i].op.box.d1[1],op[i].op.box.d1[2]);
+      matrix_mult(peek(s), edges);
+      draw_polygons(edges, t, g);
+      edges->lastcol = 0;
+      break;
     }
   }
 }
