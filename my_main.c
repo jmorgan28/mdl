@@ -73,6 +73,18 @@ void my_main() {
     case POP:
       pop(s);
       break;
+    case MOVE:
+      tmp = make_translate(op[i].op.move.d[0],op[i].op.move.d[1],op[i].op.move.d[2]);
+      matrix_mult(peek(s),tmp);
+      copy_matrix(tmp,peek(s));
+      break;
+    case SCALE:
+      tmp = make_scale(op[i].op.scale.d[0],op[i].op.scale.d[1],op[i].op.scale.d[2]);
+      matrix_mult(peek(s), tmp);
+      copy_matrix(tmp, peek(s));
+      break;
+	    
+      
     }
   }
 }
