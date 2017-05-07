@@ -112,6 +112,11 @@ void my_main() {
       draw_polygons(edges, t, g);
       edges->lastcol = 0;
       break;
+    case TORUS:
+      add_torus( edges, op[i].op.torus.d[0], op[i].op.torus.d[1], op[i].op.torus.d[2], op[i].op.torus.r0, op[i].op.torus.r1, .1);
+      matrix_mult(peek(s), edges);
+      draw_polygons(edges, t, g);
+      edges->lastcol = 0;
     }
   }
 }
