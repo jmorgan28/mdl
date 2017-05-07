@@ -117,6 +117,19 @@ void my_main() {
       matrix_mult(peek(s), edges);
       draw_polygons(edges, t, g);
       edges->lastcol = 0;
+    case LINE:
+       add_edge(edges, op[i].op.line.p0[0], op[i].op.line.p0[1], op[i].op.line.p0[2],
+	       op[i].op.line.p1[0], op[i].op.line.p1[1], op[i].op.line.p1[2]);
+      matrix_mult(peek(s), edges);
+      draw_polygons(edges, t, g);
+      edges->lastcol = 0;
+      break;
+    case SAVE:
+      save_extension(t, op[i].op.save.p->name);
+      break;
+    case DISPLAY:
+      display(t);
+      break;
     }
   }
 }
