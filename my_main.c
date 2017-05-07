@@ -56,6 +56,10 @@ void my_main() {
   struct stack *s;
   screen t;
   color g;
+
+  g.red = 0;
+  g.green = 0;
+  g.blue = 0;
   
   s = new_stack();
   tmp = new_matrix(4, 1000);
@@ -63,6 +67,12 @@ void my_main() {
 
   for (i=0;i<lastop;i++) {  
     switch (op[i].opcode) {
+    case PUSH:
+      push(s);
+      break;
+    case POP:
+      pop(s);
+      break;
     }
   }
 }
