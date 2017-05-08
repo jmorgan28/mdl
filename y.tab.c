@@ -2627,9 +2627,9 @@ int main(int argc, char **argv) {
   argv[1] = "script.mdl";
   yyin = fopen(argv[1],"r");
   
-  printf("hello\n");
+  //printf("hello\n");
   yyparse();
-  printf("hello\n");
+  //printf("hello\n");
   //COMMENT OUT PRINT_PCODE AND UNCOMMENT
   //MY_MAIN IN ORDER TO RUN YOUR CODE
   
