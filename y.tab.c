@@ -2624,7 +2624,7 @@ extern FILE *yyin;
 
 
 int main(int argc, char **argv) {
-
+  argv[1] = "script.mdl";
   yyin = fopen(argv[1],"r");
   
   printf("hello\n");

@@ -50,7 +50,9 @@
 #include "stack.h"
 
 void my_main() {
-
+  //yyparse();
+  //print_symtab();
+  //print_pcode();
   int i;
   struct matrix *tmp;
   struct matrix *edges;
